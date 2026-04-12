@@ -14,6 +14,11 @@ sh0 is a minimal x64 Linux shell in C with basic features, designed to explore p
 - Environment Control (env variables)
 - Buildin command (beyond minimal support)
 
+## Progress
+- [x] v0.1 Basic execution
+- [x] v0.2 Redirection
+- ...
+
 ## Installation
 1. Clone the repoitory:
     ```bash
