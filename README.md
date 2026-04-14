@@ -17,7 +17,6 @@ sh0 is a minimal x64 Linux shell in C with basic features, designed to explore p
 ## Progress
 - [x] v0.1 Basic execution
 - [x] v0.2 Redirection
-- ...
 
 ## Installation
 1. Clone the repoitory:
