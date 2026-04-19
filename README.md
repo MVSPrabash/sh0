@@ -21,7 +21,7 @@ Minimal x64 Linux shell written in C with basic features, designed to explore pr
 ## Installation
 1. Clone the repoitory:
     ```bash
-    git clone [https://github.com/MVSPrabash/sh0.git](https://github.com/MVSPrabash/sh0.git)
+    git clone https://github.com/MVSPrabash/sh0.git
     ```
 2. `cd sh0`
 3. Compile the source code: `gcc src/main.c -o2 -o sh0`
