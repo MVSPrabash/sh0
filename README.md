@@ -1,5 +1,5 @@
-# sh0 - Mini Shell
-sh0 is a minimal x64 Linux shell in C with basic features, designed to explore process control, file descriptors and Inter-Process Communication.
+# sh0 - Minimal Linux Shell
+Minimal x64 Linux shell written in C with basic features, designed to explore process control, file descriptors and Inter-Process Communication concepts.
 
 ## Features
 - Command line execution
