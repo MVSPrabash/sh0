@@ -15,8 +15,8 @@ Minimal x64 Linux shell written in C with basic features, designed to explore pr
 - Buildin command (beyond minimal support)
 
 ## Progress
-- [x] v0.1 Basic execution
-- [x] v0.2 Redirection
+- [ ] v0.1 Basic execution
+- [ ] v0.2 Redirection
 
 ## Installation
 1. Clone the repoitory:
