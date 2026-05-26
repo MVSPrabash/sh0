@@ -16,7 +16,7 @@ Minimal x64 Linux shell written in C with basic features, designed to explore pr
 
 ## Progress
 - [X] v0.1 Basic execution
-- [ ] v0.2 Builtin commands (cd, pwd, etc..)
+- [X] v0.2 Builtin commands (cd, pwd, etc..)
 - [ ] v0.3 Lexical analyzer for parsing
 - [ ] v0.4 Redirection
 
