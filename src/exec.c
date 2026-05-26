@@ -1,3 +1,5 @@
+#include "exec.h"
+#include "builtins.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,20 +7,25 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-#include "exec.h"
 
 void execute_command(char** argv) {
     if (argv[0] == NULL) {
         return;
     }
 
+    if (!execute_builtin(argv)) {
+        execute_external(argv);
+    }
+}
+
+void execute_external(char** argv) {
     pid_t pid = fork();
     
     if (pid < 0) {
         perror("Fork failed");
         exit(1);
     }
-    else if (pid == 0) {  // Child Proc
+    else if (pid == 0) {
         execvp(argv[0], argv);
         perror("execvp failed");
         exit(1);
@@ -28,8 +35,6 @@ void execute_command(char** argv) {
     waitpid(pid, &childStatus, 0);
         
     if (WIFEXITED(childStatus)) {
-        printf("Exit Status: %d\n", WEXITSTATUS(childStatus));
+        printf("[exit %d]\n", WEXITSTATUS(childStatus));
     }
-
 }
-

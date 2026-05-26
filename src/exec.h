@@ -3,4 +3,6 @@
 
 void execute_command(char** argv);
 
+void execute_external(char** argv);
+
 #endif
