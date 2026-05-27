@@ -15,11 +15,16 @@ Minimal x64 Linux shell written in C with basic features, designed to explore pr
 - Buildin command (beyond minimal support)
 
 ## Progress
-- [X] v0.1 Basic execution
-- [X] v0.2 Builtin commands (cd, pwd, etc..)
-- [ ] v0.3 Lexical analyzer for parsing
-- [ ] v0.4 Redirection
-
+- [X] V0.1  Basic execution
+- [X] V0.2  Builtin commands (cd, pwd, etc..)
+- [ ] V0.3  Redirection
+- [ ] V0.4  Pipes
+- [ ] V0.5  Background jobs
+- [ ] V0.6  Lexer/parser rewrite
+- [ ] V0.7  Quoting
+- [ ] V0.8  Environment variables
+- [ ] V0.9  History
+- [ ] V1.0  Interactive shell polish
 
 ## Installation
 1. Clone the repoitory:
