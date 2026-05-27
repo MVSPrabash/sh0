@@ -8,7 +8,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 
 #### Features not included
 - Scripting
-- Job Control
+- Full Job Control (`fg`, `bg`, `jobs`, `Ctrl+Z`)
 - Wildcard expansion (*, ?)
 - Environment variables
 - Buildin commands (beyond minimal support)
@@ -18,7 +18,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - [X] V0.2  Builtin commands (cd, pwd, etc..)
 - [X] V0.3  Redirection
 - [ ] V0.4  Pipes
-- [ ] V0.5  Background jobs
+- [ ] V0.5  Background jobs (`&`)
 - [ ] V0.6  Parsing system rewrite
 - [ ] V0.7  Quoting
 - [ ] V0.8  Environment variables
