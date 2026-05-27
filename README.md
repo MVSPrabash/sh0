@@ -5,6 +5,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - External command execution (`fork`, `execvp`, `waitpid`)
 - Builtin commands (`cd`, `pwd`, `help`, `exit`)
 - I/O redirection (`>`, `<`, `>>`)
+- Single command piping (`|`)
 
 #### Features not included
 - Scripting
@@ -17,7 +18,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - [X] V0.1  Basic execution
 - [X] V0.2  Builtin commands (cd, pwd, etc..)
 - [X] V0.3  Redirection
-- [ ] V0.4  Pipes
+- [X] V0.4  Pipes
 - [ ] V0.5  Background jobs (`&`)
 - [ ] V0.6  Parsing system rewrite
 - [ ] V0.7  Quoting

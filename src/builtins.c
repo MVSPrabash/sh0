@@ -23,7 +23,7 @@ int execute_builtin(char** argv) {          // builtin dispatcher
         if (argv[1] == NULL) {
             char* home = getenv("HOME");
             if (home == NULL) {
-                printf("cd: HOME not set\n");
+                fprintf(stderr, "cd: HOME not set\n");
                 return 1;
             }
             if (chdir(home) != 0) {

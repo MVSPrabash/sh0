@@ -1,5 +1,6 @@
 #include "exec.h"
 #include "builtins.h"
+#include "pipeline.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,12 +12,18 @@
 
 
 void execute_command(char** argv) {
-    if (argv[0] == NULL) {
-        return;
-    }
+    if (argv[0] == NULL) return ;
 
-    if (!execute_builtin(argv)) {
+    if (execute_builtin(argv)) return ;
+
+    int p_pos = pipe_pos(argv);
+
+    if (p_pos >= 0) {
+        execute_pipe(argv, p_pos);
+    } else if (p_pos == -1) {
         execute_external(argv);
+    } else {
+        fprintf(stderr, "sh0: multiple pipes not supported\n");
     }
 }
 
@@ -35,7 +42,7 @@ void execute_external(char** argv) {
         for (int i = 0; argv[i] != NULL; i++) {
             if (strcmp(argv[i], ">") == 0) {
                 if (argv[i + 1] == NULL) {
-                    printf("sh0: syntax error, expected a filename\n");
+                    fprintf(stderr, "sh0: syntax error, expected a filename\n");
                     exit(1);
                 }
                 outputFile = argv[i + 1];
@@ -45,7 +52,7 @@ void execute_external(char** argv) {
             }
             else if (strcmp(argv[i], "<") == 0) {
                 if (argv[i + 1] == NULL) {
-                    printf("sh0: syntax error, expected a filename\n");
+                    fprintf(stderr, "sh0: syntax error, expected a filename\n");
                     exit(1);
                 }
                 inputFile = argv[i + 1];
@@ -53,7 +60,7 @@ void execute_external(char** argv) {
             }
             else if (strcmp(argv[i], ">>") == 0) {
                 if (argv[i + 1] == NULL) {
-                    printf("sh0: syntax error, expected a filename\n");
+                    fprintf(stderr, "sh0: syntax error, expected a filename\n");
                     exit(1);
                 }
                 outputFile = argv[i + 1];
