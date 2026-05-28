@@ -38,10 +38,12 @@ src/
 ├── builtins.c     # Builtin commands
 ├── parser.c       # Command tokenization
 ├── pipeline.c     # Pipe handling (`|`)
+├── background.c   # background job handling (`&`)
 ├── exec.h
 ├── builtins.h
 ├── parser.h
-└── pipeline.h
+├── pipeline.h
+└── background.h
 ```
 
 ## Installation
