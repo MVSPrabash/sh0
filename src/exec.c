@@ -1,6 +1,7 @@
 #include "exec.h"
 #include "builtins.h"
 #include "pipeline.h"
+#include "background.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,17 +18,23 @@ void execute_command(char** argv) {
     if (execute_builtin(argv)) return ;
 
     int p_pos = pipe_pos(argv);
+    int bg_pos = background_pos(argv);
+
+    if (bg_pos == -2) {
+        fprintf(stderr, "sh0: invalid syntax for `&`\n");
+        return ;
+    }
 
     if (p_pos >= 0) {
         execute_pipe(argv, p_pos);
     } else if (p_pos == -1) {
-        execute_external(argv);
+        execute_external(argv, bg_pos);
     } else {
         fprintf(stderr, "sh0: multiple pipes not supported\n");
     }
 }
 
-void execute_external(char** argv) {
+void execute_external(char** argv, int background) {
     pid_t pid = fork();
     
     if (pid < 0) {
@@ -93,6 +100,10 @@ void execute_external(char** argv) {
         execvp(argv[0], argv);
         perror("execvp");
         exit(1);
+    }
+
+    if (background >= 0) {
+        return ;
     }
 
     int childStatus;

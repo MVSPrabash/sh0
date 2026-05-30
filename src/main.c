@@ -10,6 +10,7 @@
 
 #include "parser.h"
 #include "exec.h"
+#include "background.h"
 
 #define CMD_BUFF_SIZE 1024
 
@@ -17,6 +18,8 @@ int main() {
     char cmd[CMD_BUFF_SIZE];
 
     while (1) {
+        reap_background_processes();
+
         printf("sh0# ");
         fflush(stdout);
 

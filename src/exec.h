@@ -3,6 +3,8 @@
 
 void execute_command(char** argv);
 
-void execute_external(char** argv);
+void execute_external(char** argv, int background);
+
+int background_pos(char** argv);
 
 #endif
