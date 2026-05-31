@@ -6,7 +6,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - Builtin commands (`cd`, `pwd`, `help`, `exit`)
 - I/O redirection (`>`, `<`, `>>`)
 - Single-pipe command pipelines (`|`)
-- Background command execution (&)
+- Background command execution (`&`)
 
 #### Features not included
 - Scripting
