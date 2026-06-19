@@ -3,4 +3,6 @@
 
 char** tokenize(char* cmd);
 
+void free_tokens(char** argv);
+
 #endif

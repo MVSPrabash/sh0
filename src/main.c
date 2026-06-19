@@ -34,6 +34,6 @@ int main() {
 
         execute_command(argv);
 
-        free(argv);  // dealloc
+        free_tokens(argv);
     }
 }

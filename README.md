@@ -15,7 +15,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - Environment variables
 - Builtin commands (beyond minimal support)
 
-## Known Limitations
+## Limitations
 - Mixed piping and redirection are not yet supported
 - Multiple pipes (`a | b | c`) are not yet supported
 - Full Job control (`jobs`, `fg`, `bg`) not supported
