@@ -26,7 +26,7 @@ Minimal x64 Linux shell written in C to explore Linux process control, file desc
 - [X] V0.3  Redirection
 - [X] V0.4  Single-pipe support
 - [X] V0.5  Background jobs (`&`)
-- [ ] V0.6  Parsing system rewrite
+- [X] V0.6  Parsing system rewrite
 - [ ] V0.7  Quoting
 - [ ] V0.8  Environment variables
 - [ ] V0.9  History
@@ -81,3 +81,4 @@ test1
 - File descriptors and redirection (`dup2`, `open`)
 - Shell builtins and process state
 - Inter-process communication (`pipe`)
+- Lexical analysis and tokenization
